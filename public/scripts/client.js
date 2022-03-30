@@ -6,7 +6,7 @@ const renderTweets = function (tweets) {
   for (const post of tweets) {
     const $tweet = createTweetElement(post);
     //console.log($tweet);
-    $("#tweets-container").append($tweet);
+    $("#tweets-container").prepend($tweet);
   }
 };
 
