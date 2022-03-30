@@ -79,6 +79,7 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <div id="err-div"><p id="err-msg"></p></div>
       <section class="new-tweet">
         <form action="/tweets" method="POST" id="form-submit">
           <label for="tweet-text"></label>
@@ -87,6 +88,7 @@
             id="tweet-text"
             placeholder="What are you humming about?"
           ></textarea>
+
           <div id="div-tweet">
             <button type="submit" id="tweet-sub">Tweet</button>
             <output

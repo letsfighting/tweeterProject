@@ -37,3 +37,24 @@ section {
 .container {
   flex-direction: column;
 }
+
+#err-div {
+  width: 100%;
+  height: 50px;
+  color: white;
+  background-color: #bb1313;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.error-false {
+  width: 100%;
+  height: 0px;
+  color: transparent;
+  background-color: transparent;
+}
+
+#err-msg {
+  margin: 10px;
+  padding-top: 7.5px;
+}

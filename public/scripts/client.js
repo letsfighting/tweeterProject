@@ -1,3 +1,10 @@
+const escaper = function (str) {
+  let p = document.createElement("p");
+  p.appendChild(document.createTextNode(str));
+  console.log("p: ", p);
+  return p.innerHTML;
+};
+
 const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
@@ -7,7 +14,10 @@ const renderTweets = function (tweets) {
     const $tweet = createTweetElement(post);
     //console.log($tweet);
     $("#tweets-container").prepend($tweet);
+    $("#tweets-container").text();
   }
+
+  $(`#tweet-count`).text(140);
 };
 
 const createTweetElement = function (tweet) {
@@ -21,7 +31,7 @@ const createTweetElement = function (tweet) {
     <span class="name">${tweet.user.name}</span>
     </header>
 
-    <p>${tweet.content.text}</p>
+    <p>${escaper(tweet.content.text)}</p>
 
     <footer>
       <span id="days-ago">${timeago.format(tweet.created_at)}</span>
@@ -56,6 +66,8 @@ const loadTweets = function () {
 };
 
 $(document).ready(function () {
+  $("#err-div").hide();
+
   loadTweets();
 
   $("#form-submit").submit(function (event) {
@@ -67,10 +79,27 @@ $(document).ready(function () {
     console.log("this: ", this);
 
     if (tweetPost.length <= 5) {
-      alert("Post cannot be empty!");
+      $(`#err-msg`).empty();
+      $("#err-div").slideUp("fast", function () {});
+      $(`#err-msg`).append("Post cannot be empty!");
+      //  $(`#err-div`).removeClass("error-false");
+      // $(`#err-div`).addClass("error-true");
+      $("#err-div").slideDown("fast", function () {
+        // Animation complete.
+      });
     } else if (tweetPost.length > 145) {
-      alert("Post length cannot exceed 140 characters!");
+      $(`#err-msg`).empty();
+      $("#err-div").slideUp("fast", function () {});
+      $(`#err-msg`).append("Post length cannot exceed 140 characters!");
+      // $(`#err-div`).removeClass("error-false");
+      //$(`#err-div`).addClass("error-true");
+      $("#err-div").slideDown("fast", function () {});
     } else {
+      $("#err-div").slideUp("fast", function () {});
+
+      // $(`#err-div`).removeClass("error-true");
+      // $(`#err-div`).addClass("error-false");
+
       $.ajax({
         url: `/tweets/`,
         method: "POST",
