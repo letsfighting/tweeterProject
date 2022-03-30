@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,8 +20,83 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro", san-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+main {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  background-color: #f4f1ec;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+article.tweet {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-style: solid;
+  margin-top: 60px;
+}
+
+article.tweet header {
+  height: 66px;
+  padding-top: 20px;
+  padding-left: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+article.tweet header img {
+  height: 45px;
+  width: 45px;
+}
+
+article.tweet header span.name {
+  padding-top: 7.5px;
+  padding-left: 7.5px;
+}
+
+article.tweet footer {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+article.tweet p {
+  margin: 0px;
+  padding: 25px;
+  margin-bottom: 10px;
+  border-bottom-width: 5px;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-style: solid;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  width: 95%;
+  margin-left: 2.5%;
+}
+
+#days-ago {
+  font-size: small;
+  padding-left: 25px;
+}
+
+#fn-btns {
+  font-size: small;
+  padding-right: 25px;
+}
+
+article.tweet:hover {
+  box-shadow: 5px 5px;
+}
+
+i.opt-btns:hover {
+  color: gold;
+}

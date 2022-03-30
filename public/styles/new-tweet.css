@@ -1,0 +1,39 @@
+#tweet-text {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  resize: none;
+  border-width: 5px;
+  font-weight: bold;
+  height: 50px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+section {
+  width: 100%;
+}
+
+#tweet-sub {
+  color: #ffffff;
+  background-color: #4056a1;
+}
+
+#div-tweet {
+  font-family: "Bungee", san-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.numNeg {
+  color: red;
+}
+
+.container {
+  flex-direction: column;
+}

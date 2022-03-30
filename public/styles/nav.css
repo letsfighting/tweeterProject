@@ -1,0 +1,36 @@
+nav {
+  color: #ffffff;
+  background-color: #4056a1;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  z-index: 1;
+  position: fixed;
+  top: 0px;
+}
+
+#leftspan {
+  font-family: "Bungee", san-serif;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#rightspan {
+  font-family: "Source Sans Pro", san-serif;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+nav div {
+  text-align: center;
+}
+
+#arrows {
+  color: #f10000;
+}
