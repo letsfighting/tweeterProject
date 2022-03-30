@@ -11,6 +11,8 @@ const renderTweets = function (tweets) {
 };
 
 const createTweetElement = function (tweet) {
+  //console.log("tweet:", tweet);
+
   const tweetElement = `<article class="tweet">
     <header>
     <span>
@@ -58,16 +60,27 @@ $(document).ready(function () {
 
   $("#form-submit").submit(function (event) {
     event.preventDefault();
-    const tweetPost = $(this).serialize();
 
-    $.ajax({
-      url: `/tweets/`,
-      method: "POST",
-      data: tweetPost,
-    }).then(function (response) {
-      console.log("postmethod resp: ", response);
-      loadTweets();
-    });
+    const tweetPost = $(this).serialize();
+    console.log("tweetPost: ", tweetPost);
+    console.log("event: ", event);
+    console.log("this: ", this);
+
+    if (tweetPost.length <= 5) {
+      alert("Post cannot be empty!");
+    } else if (tweetPost.length > 145) {
+      alert("Post length cannot exceed 140 characters!");
+    } else {
+      $.ajax({
+        url: `/tweets/`,
+        method: "POST",
+        data: tweetPost,
+      }).then(function (response) {
+        console.log("postmethod resp: ", response);
+        loadTweets();
+        $("#tweet-text").val("");
+      });
+    }
   });
 
   /* to add hover color changes to buttons and boxshadows to hovered tweets - replaced with css id/class/element:hover method
