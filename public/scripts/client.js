@@ -22,7 +22,7 @@ const renderTweets = function (tweets) {
 };
 
 const createTweetElement = function (tweet) {
-  console.log("tweet:", tweet.user.avatars);
+  //creates tweet html
 
   const tweetElement = `<article class="tweet">
     <header>
@@ -54,6 +54,8 @@ const createTweetElement = function (tweet) {
  */
 
 const loadTweets = function () {
+  //ajax handles the GET requests for /tweets/ asynchronously
+
   $.ajax({
     url: `/tweets/`,
     method: "GET",
@@ -75,34 +77,24 @@ $(document).ready(function () {
     event.preventDefault();
 
     const tweetPost = $(this).serialize();
-    console.log("tweetPost: ", tweetPost);
-    console.log("event: ", event);
-    console.log("this: ", this);
 
+    //conditionals to restrict posting to within 140 characters.
     if (tweetPost.length <= 5) {
       $(`#err-msg`).empty();
       $("#err-div").slideUp("fast", function () {});
       $(`#err-msg`).append("Post cannot be empty!");
-      //  $(`#err-div`).removeClass("error-false");
-      // $(`#err-div`).addClass("error-true");
+
       $(`#tweet-text`).addClass("error-true");
-      $("#err-div").slideDown("fast", function () {
-        // Animation complete.
-      });
+      $("#err-div").slideDown("fast", function () {});
     } else if (tweetPost.length > 145) {
       $(`#err-msg`).empty();
       $("#err-div").slideUp("fast", function () {});
       $(`#err-msg`).append("Post length cannot exceed 140 characters!");
-      // $(`#err-div`).removeClass("error-false");
-      //$(`#err-div`).addClass("error-true");
       $(`#tweet-text`).addClass("error-true");
       $("#err-div").slideDown("fast", function () {});
     } else {
       $("#err-div").slideUp("fast", function () {});
       $(`#tweet-text`).removeClass("error-true");
-      // $(`#err-div`).removeClass("error-true");
-      // $(`#err-div`).addClass("error-false");
-
       $.ajax({
         url: `/tweets/`,
         method: "POST",
@@ -114,21 +106,4 @@ $(document).ready(function () {
       });
     }
   });
-
-  /* to add hover color changes to buttons and boxshadows to hovered tweets - replaced with css id/class/element:hover method
-  $("i.opt-btns").mouseover(function (event) {
-    $(this).addClass("hoveredbtn");
-  });
-
-  $("i.opt-btns").mouseout(function (event) {
-    $(this).removeClass("hoveredbtn");
-  });
-  
-  $("article.tweet").mouseover(function (event) {
-    $(this).addClass("hovered");
-  });
-
-  $("article.tweet").mouseout(function (event) {
-    $(this).removeClass("hovered");
-  });*/
 });
