@@ -1,7 +1,6 @@
 const escaper = function (str) {
   let p = document.createElement("p");
   p.appendChild(document.createTextNode(str));
-  console.log("p: ", p);
   return p.innerHTML;
 };
 
@@ -9,6 +8,8 @@ const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
+
+  $("#tweets-container").empty();
 
   for (const post of tweets) {
     const $tweet = createTweetElement(post);
@@ -62,6 +63,8 @@ const loadTweets = function () {
     renderTweets(response);
   });
 };
+
+const newTweet = function () {};
 
 $(document).ready(function () {
   $("#err-div").hide();

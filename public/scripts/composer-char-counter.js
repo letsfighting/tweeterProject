@@ -1,7 +1,4 @@
 $(document).ready(function () {
-  // --- our code goes here ---
-  console.log("Document ready");
-
   $("textarea").on("input", function (event) {
     let x = $("textarea").val().length;
 
