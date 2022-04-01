@@ -19,8 +19,17 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Screenshot of Main Page"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Main.JPG?raw=true)
-!["Screenshot of Post Success"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Post%20Success%201.JPG?raw=true)
-!["Screenshot of Character Post Length Restrictions: Cannot Be Blank"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Post%20Cannot%20Be%20Empty.JPG?raw=true)
-!["Screenshot of Character Post Length Restrictions: Cannot Exceed 140 Characters"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Post%20Character%20Length%20Tracking.JPG?raw=true)
-!["Screenshot of Responsive Display Adjustments"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Responsive%20Design.jpg?raw=true)
+1. Main Page
+   !["Screenshot of Main Page"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Main.JPG?raw=true)
+
+2. Post Successful
+   !["Screenshot of Post Success"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Post%20Success%201.JPG?raw=true)
+
+3. Post Cannot Be Blank
+   !["Screenshot of Character Post Length Restrictions: Cannot Be Blank"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Post%20Cannot%20Be%20Empty.JPG?raw=true)
+
+4. Post Cannot Be Longer Than 140 Characters
+   !["Screenshot of Character Post Length Restrictions: Cannot Exceed 140 Characters"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Post%20Character%20Length%20Tracking.JPG?raw=true)
+
+5. Responsive Display
+   !["Screenshot of Responsive Display Adjustments"](https://github.com/letsfighting/tweeterProject/blob/master/docs/Responsive%20Design.jpg?raw=true)
