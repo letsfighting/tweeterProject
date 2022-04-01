@@ -1,6 +1,7 @@
 nav {
   color: #ffffff;
-  background-color: #4056a1;
+  background-color: #c24400;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   height: 120px;
   display: flex;
   align-items: center;
@@ -33,4 +34,11 @@ nav div {
 
 #arrows {
   color: #f10000;
+}
+
+@media (min-width: 1024px) {
+  nav {
+    background-color: #4056a1;
+    background-image: none;
+  }
 }

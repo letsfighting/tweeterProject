@@ -37,7 +37,7 @@ main {
 }
 
 article.tweet {
-  height: 200px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -93,10 +93,33 @@ article.tweet p {
   padding-right: 25px;
 }
 
+#bodyhtml {
+  margin-bottom: 200px;
+}
+
 article.tweet:hover {
   box-shadow: 5px 5px;
 }
 
 i.opt-btns:hover {
-  color: gold;
+  color: rgba(255, 0, 0, 0.671);
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 45%;
+  }
+
+  #bodyhtml {
+    display: flex;
+    margin-bottom: 200px;
+  }
+
+  #tweet-text {
+    margin-top: 200px;
+  }
+
+  #tweet-text.error-true {
+    margin-top: 0px;
+  }
 }

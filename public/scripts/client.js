@@ -12,7 +12,7 @@ const renderTweets = function (tweets) {
 
   for (const post of tweets) {
     const $tweet = createTweetElement(post);
-    //console.log($tweet);
+
     $("#tweets-container").prepend($tweet);
     $("#tweets-container").text();
   }
@@ -21,7 +21,7 @@ const renderTweets = function (tweets) {
 };
 
 const createTweetElement = function (tweet) {
-  //console.log("tweet:", tweet);
+  console.log("tweet:", tweet.user.avatars);
 
   const tweetElement = `<article class="tweet">
     <header>
@@ -45,8 +45,6 @@ const createTweetElement = function (tweet) {
 
   return tweetElement;
 };
-
-// Test / driver code (temporary). Eventually will get this from the server.
 
 /*
  * Client-side JS logic goes here
@@ -84,6 +82,7 @@ $(document).ready(function () {
       $(`#err-msg`).append("Post cannot be empty!");
       //  $(`#err-div`).removeClass("error-false");
       // $(`#err-div`).addClass("error-true");
+      $(`#tweet-text`).addClass("error-true");
       $("#err-div").slideDown("fast", function () {
         // Animation complete.
       });
@@ -93,10 +92,11 @@ $(document).ready(function () {
       $(`#err-msg`).append("Post length cannot exceed 140 characters!");
       // $(`#err-div`).removeClass("error-false");
       //$(`#err-div`).addClass("error-true");
+      $(`#tweet-text`).addClass("error-true");
       $("#err-div").slideDown("fast", function () {});
     } else {
       $("#err-div").slideUp("fast", function () {});
-
+      $(`#tweet-text`).removeClass("error-true");
       // $(`#err-div`).removeClass("error-true");
       // $(`#err-div`).addClass("error-false");
 

@@ -67,20 +67,21 @@
       </div>
     </nav>
 
+    <div id="bodyhtml">
     <header class="tophead">
       <div>
-        <img src="/images/profile-hex.png" />
+        <img id="profile" src="/images/profile-hex.png" />
       </div>
-      <br />
+
       <div>
-        <h2>Your Name</h2>
+        <h2>Jane Doe</h2>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <div id="err-div"><p id="err-msg"></p></div>
-      <section class="new-tweet">
+      <section class="new-tweet" id="tweet-section">
         <form action="/tweets" method="POST" id="form-submit">
           <label for="tweet-text"></label>
           <textarea
@@ -102,6 +103,7 @@
         </form>
       </section>
       <section class="tweet-container" id="tweets-container"></section>
+      </div>
     </main>
   </body>
 </html>
